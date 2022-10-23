@@ -39,7 +39,7 @@ const addNote = (title, body) => {
 const removeNote = (title) => {
     const notes = loadNotes();
     const otherNotes = notes.filter((note) => {
-        note.title !== title
+        return note.title !== title
     })
 
     if (otherNotes.length === 0) {
