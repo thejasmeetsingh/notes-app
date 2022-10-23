@@ -17,7 +17,17 @@ const saveNotes = (notes) => {
     fs.writeFileSync('notes.json', dataJSON);
 }
 
-const getNotes = () => { return "Your Notes..." };
+const getNoteList = () => { 
+    const notes = loadNotes();
+
+    if (notes.length === 0) {
+        console.log(chalk.red.inverse('No notes found'))
+    } else {
+        notes.forEach((element) => {
+            console.log(chalk.green('- ' + element.title))
+        });
+    }
+ };
 
 const addNote = (title, body) => {
     const notes = loadNotes();
@@ -53,7 +63,7 @@ const removeNote = (title) => {
 }
 
 module.exports = {
-    getNotes: getNotes,
+    getNoteList: getNoteList,
     addNote: addNote,
     removeNote: removeNote,
 };
