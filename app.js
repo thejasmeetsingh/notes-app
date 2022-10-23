@@ -1,4 +1,3 @@
-const validator = require('validator');
 const notes = require('./notes.js');
 const yargs = require('yargs');
 
