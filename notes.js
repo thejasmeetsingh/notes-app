@@ -23,6 +23,7 @@ const getNoteList = () => {
     if (notes.length === 0) {
         console.log(chalk.red.inverse('No notes found'))
     } else {
+        console.log(chalk.green.inverse('Your Notes:'))
         notes.forEach((element) => {
             console.log(chalk.green('- ' + element.title))
         });
